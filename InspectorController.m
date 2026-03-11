@@ -643,11 +643,11 @@ static InspectorController *sharedInspectorController = nil;
 #pragma mark ---- Interface stuff ----
 
 //	*must* precede refreshFontNamesMenu in class code
-int fontSort(id font1, id font2, void *context)
+NSInteger fontSort(id font1, id font2, void *context)
 {
 	NSString *fontName1 = font1;
 	NSString *fontName2 = font2;
-	NSComparisonResult sortOrder = [fontName1 caseInsensitiveCompare:fontName2];
+	NSInteger sortOrder = [fontName1 caseInsensitiveCompare:fontName2];
 	return sortOrder;
 }
 
@@ -1531,3 +1531,4 @@ int fontSort(id font1, id font2, void *context)
 */
 
 @end
+

@@ -327,7 +327,7 @@ NSLocalizedString(@"OpenDocument (.odt)", @"name of the file format: OpenDocumen
 //	determine if flagged as stationary pad in the Finder
 -(BOOL)isStationaryPad:(NSString *)path
 {
-	static kIsStationary = 0x0800;
+    static int kIsStationary = 0x0800;
 	CFURLRef url;
 	FSRef fsRef;
 	FSCatalogInfo catInfo;
@@ -339,7 +339,7 @@ NSLocalizedString(@"OpenDocument (.odt)", @"name of the file format: OpenDocumen
 	//	catalog info from file system reference; isStationary status from catalog info
 	if (success && (FSGetCatalogInfo(&fsRef, kFSCatInfoFinderInfo, &catInfo, nil, nil, nil))==noErr)
 	{ 
-		return ((((FileInfo*)catInfo.finderInfo)->finderFlags & kIsStationary) == kIsStationary);
+        return ((((FileInfo*)catInfo.finderInfo)->finderFlags & kIsStationary) == kIsStationary);
 	}
 	return NO;
 }
@@ -645,3 +645,4 @@ NSLocalizedString(@"OpenDocument (.odt)", @"name of the file format: OpenDocumen
 -(int)columnsGutter { return _columnsGutter; }
 
 @end
+

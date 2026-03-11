@@ -71,12 +71,12 @@
 }
 
 //	sort the encodings according to the human-readable name
-int encSort(id array1, id array2, void *context)
+NSInteger encSort(id array1, id array2, void *context)
 {
 	NSString *encName1 = [array1 objectAtIndex:0];
 	NSString *encName2 = [array2 objectAtIndex:0];
 	NSComparisonResult sortOrder = [encName1 caseInsensitiveCompare:encName2];
-	return sortOrder;
+	return (NSInteger)sortOrder;
 }
 
 -(IBAction)showSheet:(id)sender
